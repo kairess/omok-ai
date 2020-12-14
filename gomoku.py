@@ -17,20 +17,15 @@ class Board():
 class Gomoku():
     def __init__(self, board):
         self.board = board
-        self.current_player = 0
+        self.current_player = 1
         self.won_player = 0
 
     def reset(self):
         self.board.board = 0
-        self.current_player = 0
+        self.current_player = 1
         self.won_player = 0
 
-    def next(self, x=None, y=None):
-        if self.current_player == 1:
-            self.current_player = 2
-        else:
-            self.current_player = 1
-
+    def put(self, x=None, y=None):
         if x is None and y is None:
             while True:
                 rand_x = np.random.randint(0, self.board.w)
@@ -41,6 +36,12 @@ class Gomoku():
                     break
         else:
             self.board.board[y][x] = self.current_player
+
+    def next(self):
+        if self.current_player == 1:
+            self.current_player = 2
+        else:
+            self.current_player = 1
     
     def check_won(self):
         player = self.current_player

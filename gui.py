@@ -15,8 +15,6 @@ camera.orthographic = True
 camera.fov = 23
 camera.position = (w//2, h//2)
 
-player = Entity(name='1', color=color.black)
-
 board = Board(w=w, h=h)
 board_buttons = [[None for x in range(w)] for y in range(h)]
 game = Gomoku(board=board)

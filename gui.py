@@ -21,7 +21,6 @@ board = Board(w=w, h=h)
 board_buttons = [[None for x in range(w)] for y in range(h)]
 game = Gomoku(board=board)
 
-Text(text='빵형의 개발도상국')
 Entity(model=Grid(w+1, h+1), scale=w+1, color=color.black, x=w//2-0.5, y=h//2-0.5, z=0.1)
 
 for y in range(h):
